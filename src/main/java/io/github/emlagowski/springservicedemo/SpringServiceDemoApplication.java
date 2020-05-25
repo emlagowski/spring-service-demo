@@ -29,7 +29,7 @@ public class SpringServiceDemoApplication {
         }
 
         @GetMapping("/test")
-        public String test(@RequestParam(value = "value", defaultValue = "Hi!") String value) {
+        public String test(@RequestParam(value = "value", defaultValue = "Hiiiii!") String value) {
             return value;
         }
 
