@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @SpringBootApplication
 public class SpringServiceDemoApplication {
 
@@ -30,7 +34,7 @@ public class SpringServiceDemoApplication {
 
         @GetMapping("/test")
         public String test(@RequestParam(value = "value", defaultValue = "Hiiiii!") String value) {
-            return value;
+            return value + " " + DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now());
         }
 
     }
